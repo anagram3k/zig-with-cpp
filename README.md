@@ -12,8 +12,3 @@ Use below script to run.
 zig build run
 ```
 
-# Test
-Use below script to test.
-```bash
-zig build test
-```

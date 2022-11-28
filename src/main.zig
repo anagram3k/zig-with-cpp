@@ -16,22 +16,23 @@ pub fn main() void {
     c.string_del(str);
     c.string_del(str2);
 
-    // printf("\n == EXPERIMENT 2 - Class Runstat ======\n");
-    // pStat obj = Runstat_new();
-    // Runstat_add(obj, 10.0);
-    // Runstat_add(obj, 4.0);
-    // Runstat_add(obj, 25.0);
-    // Runstat_add(obj, 16.0);
+    print("\n == EXPERIMENT 2 - Class Runstat ======\n", .{});
+    var obj: c.pStat = c.Runstat_new();
+    c.Runstat_add(obj, 10.0);
+    c.Runstat_add(obj, 4.0);
+    c.Runstat_add(obj, 25.0);
+    c.Runstat_add(obj, 16.0);
 
-    // printf(" Number of Elements processed = %zu \n", Runstat_size(obj));
-    // printf(" Mean = %.5f \n", Runstat_mean(obj));
-    // printf(" Sdev = %.5f \n", Runstat_sdev(obj));
+    _ = std.c.printf(" Number of Elements processed = %zu \n", c.Runstat_size(obj));
+    print(" Number of Elements processed = {d} \n", .{c.Runstat_size(obj)});
+    print(" Mean = {e} \n", .{c.Runstat_mean(obj)});
+    print(" Sdev = {d:.5} \n", .{c.Runstat_sdev(obj)});
 
-    // Runstat_add(obj, -50.0);
-    // Runstat_add(obj, 80.0);
-    // printf(" Mean = %.5f \n", Runstat_mean(obj));
-    // printf(" Sdev = %.5f \n", Runstat_sdev(obj));
-    // // Delete C++ Object
-    // Runstat_del(obj);
+    c.Runstat_add(obj, -50.0);
+    c.Runstat_add(obj, 80.0);
+    print(" Mean = {d:.5} \n", .{c.Runstat_mean(obj)});
+    print(" Sdev = {d:.5} \n", .{c.Runstat_sdev(obj)});
+    // Delete C++ Object
+    c.Runstat_del(obj);
 
 }
