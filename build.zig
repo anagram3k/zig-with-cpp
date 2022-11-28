@@ -28,15 +28,11 @@ pub fn build(b: *std.build.Builder) void {
 
     const run_step = b.step("run", "Run the app");
     run_step.dependOn(&run_cmd.step);
-
 }
 
 fn withCpp(exe: *std.build.LibExeObjStep) void {
-
-    exe.linkSystemLibraryName("c");
-    exe.linkSystemLibraryName("c++");
+    exe.linkSystemLibrary("c");
+    exe.linkSystemLibrary("c++");
     exe.addIncludePath("cpp-code/");
-    exe.addCSourceFile("cpp-code/codecpp.h", cflags);
     exe.addCSourceFile("cpp-code/codecpp.cpp", cflags);
-
 }
