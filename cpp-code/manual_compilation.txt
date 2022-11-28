@@ -1,0 +1,9 @@
+
+# Generate object code codecpp.o
+$ g++ codecpp.cpp -o codecpp.o -c -std=c++1z -Wall -g
+
+# Generate object-code main.o
+$ gcc main.c -o main.o -c -g
+
+# Link => generate main.bin
+$ g++ main.o codecpp.o -o main.bin
