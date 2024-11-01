@@ -49,8 +49,9 @@ EXPORT_C void    string_disp (hString, const char* name);
 //============ C-interface for class Runstat ============//
 
 // Opaque pointer type alias for C-lang
+#include <stddef.h>
+
 typedef void* pStat;
-typedef long unsigned int size_t;
 
 EXPORT_C pStat   Runstat_new();
 EXPORT_C void    Runstat_del (pStat self);

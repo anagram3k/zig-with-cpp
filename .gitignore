@@ -33,7 +33,7 @@
 *.bin
 
 # Zig Specific
-zig-cache/
+.zig-cache/
 zig-out/
 release/
 debug/

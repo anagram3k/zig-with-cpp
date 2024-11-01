@@ -7,9 +7,9 @@ const print = std.debug.print;
 
 pub fn main() void {
     print("\n == EXPERIMENT 1 - std::string C-wrapper ======\n", .{});
-    var str: c.hString = c.string_new1("A C++ string in C");
+    const str: c.hString = c.string_new1("A C++ string in C");
     c.string_disp(str, "str");
-    var str2: c.hString = c.string_copy(str);
+    const str2: c.hString = c.string_copy(str);
     c.string_add(str, " - hello world");
     c.string_disp(str, "str");
     c.string_disp(str2, "str2");
@@ -17,7 +17,7 @@ pub fn main() void {
     c.string_del(str2);
 
     print("\n == EXPERIMENT 2 - Class Runstat ======\n", .{});
-    var obj: c.pStat = c.Runstat_new();
+    const obj: c.pStat = c.Runstat_new();
     c.Runstat_add(obj, 10.0);
     c.Runstat_add(obj, 4.0);
     c.Runstat_add(obj, 25.0);

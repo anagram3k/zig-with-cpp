@@ -17,7 +17,7 @@ Runstat::Runstat()
 
 Runstat::~Runstat()
 {
-    std::cout << " [TRACE] Object deleted OK" << std::endl;
+    std::cout << " [TRACE] Object deleted OK." << std::endl;
 }
 
 void
